@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Uma pausa pra você 💙</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Arial,sans-serif;background:linear-gradient(135deg,#dbeafe,#fdf2f8);display:flex;align-items:center;justify-content:center;color:#172033;padding:20px}
+.card{width:min(620px,100%);background:rgba(255,255,255,.92);border-radius:28px;padding:38px 30px;box-shadow:0 20px 60px rgba(31,41,55,.16);text-align:center;position:relative;overflow:hidden}
+.heart{font-size:42px;margin-bottom:8px}.step{font-size:13px;color:#64748b;margin-bottom:18px}.title{font-size:31px;font-weight:800;line-height:1.12;margin:0 0 16px}.text{font-size:17px;line-height:1.65;color:#475569;margin:0 auto 24px;max-width:500px}
+.box{background:#f8fafc;border-radius:20px;padding:18px;text-align:left;margin:18px auto 25px;max-width:480px}.box div{padding:7px 0}.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+button{border:0;border-radius:999px;padding:14px 22px;font-size:16px;font-weight:700;cursor:pointer;background:#172033;color:white;transition:.18s}button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.12)}button.alt{background:#e2e8f0;color:#334155}
+.hidden{display:none}.tiny{margin-top:24px;font-size:12px;color:#94a3b8}
+.fade{animation:fade .35s ease}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<main class="card">
+<div id="screen" class="fade"></div>
+<div class="tiny">feito com carinho, sem nenhuma obrigação de responder 💙</div>
+</main>
+<script>
+const screens=[
+{emoji:"💙",title:"Ei, você...",text:"Recebi uma informação muito importante hoje. E acho que você precisa saber.",button:"Quero saber 👀"},
+{emoji:"🚨",title:"Foi detectado um caso grave.",text:"Os sintomas observados foram:",box:["excesso de faculdade","estágio demais","cabeça cheia","poucas pausas","vontade de sumir por algumas horinhas"],button:"Qual o tratamento? 🧐"},
+{emoji:"🩺",title:"Prescrição médica:",text:"O tratamento recomendado é simples:",box:["uma coisinha gostosa 🍫","uma música que você gosta 🎧","um pouco de descanso 💤","carinho, se você quiser 🤍","e ZERO obrigação de estar bem o tempo inteiro"],button:"Abrir recomendação 💌"},
+{emoji:"🌙",title:"Você não precisa dar conta de tudo hoje.",text:"Eu sei que esses dias estão sendo puxados. Então não precisa fingir que tá tudo bem comigo, nem resolver tudo agora. Se quiser conversar, eu tô aqui. Se quiser se distrair, eu tô aqui. Se quiser jogar, assistir alguma coisa ou simplesmente ficar quietinha comigo, também. E se hoje você só conseguir respirar e descansar... já tá tudo bem.",button:"Tem mais uma coisa... 👀"},
+{emoji:"🥹",title:"A última informação é a mais importante.",text:"Eu tô com saudade de você. E talvez uma pequena pausa de faculdade, estágio e preocupações faça bem pra nós dois. Então... vamos fugir de tudo isso por algumas horinhas? 💙",buttons:[["Sim 🥹",true],["Vou pensar 👀",false]]}
+];
+let i=0;
+function render(){
+const s=screens[i], el=document.getElementById("screen");
+el.className="fade";
+el.innerHTML=`<div class="heart">${s.emoji}</div><div class="step">${i+1} de ${screens.length}</div><h1 class="title">${s.title}</h1><p class="text">${s.text}</p>${s.box?`<div class="box">${s.box.map(x=>`<div>• ${x}</div>`).join("")}</div>`:""}<div class="btns">${s.buttons?s.buttons.map((b,n)=>`<button class="${n?'alt':''}" onclick="finish(${b[1]})">${b[0]}</button>`).join(""):`<button onclick="next()">${s.button}</button>`}</div>`;
+}
+function next(){i++;render()}
+function finish(ok){
+const el=document.getElementById("screen");
+el.innerHTML=ok?`<div class="heart">🥹💙</div><div class="step">tratamento iniciado</div><h1 class="title">Então está combinado.</h1><p class="text">Você acaba de ganhar algumas horinhas sem estágio, faculdade e preocupações. Só não vale usar isso pra trabalhar escondida, hein? 😌<br><br><b>Agora é só você, eu e uma pausa.</b></p>`:`<div class="heart">🤍</div><div class="step">sem pressão</div><h1 class="title">Tudo bem.</h1><p class="text">Pode pensar, pode descansar, pode não querer nada hoje. A surpresa continua valendo. Só queria que você soubesse que eu tô aqui. 💙</p>`;
+}
+render();
+</script>
+</body>
+</html>
