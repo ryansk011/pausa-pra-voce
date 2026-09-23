@@ -3,42 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Uma pausa pra você 💙</title>
+<title>Pra você, amor 💗</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;font-family:Arial,sans-serif;background:radial-gradient(circle at top,#dbeafe 0,#eef2ff 38%,#fdf2f8 100%);display:flex;align-items:center;justify-content:center;color:#172033;padding:20px;overflow-x:hidden}
-body:before,body:after{content:"";position:fixed;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.28);filter:blur(8px);z-index:-1}
-body:before{top:-90px;left:-70px}body:after{bottom:-100px;right:-70px}
-.card{width:min(650px,100%);background:rgba(255,255,255,.9);border:1px solid rgba(255,255,255,.8);border-radius:30px;padding:34px 28px 26px;box-shadow:0 24px 70px rgba(31,41,55,.16);text-align:center;position:relative;overflow:hidden;backdrop-filter:blur(8px)}
-.progress{height:6px;background:#e2e8f0;border-radius:99px;overflow:hidden;margin-bottom:26px}.progress span{display:block;height:100%;background:#172033;border-radius:99px;transition:width .35s ease}
-.emoji{font-size:48px;margin:2px 0 10px}.step{font-size:12px;color:#64748b;margin-bottom:14px;letter-spacing:.08em;text-transform:uppercase}.title{font-size:31px;font-weight:800;line-height:1.12;margin:0 0 16px}.text{font-size:17px;line-height:1.7;color:#475569;margin:0 auto 24px;max-width:530px}
-.box{background:#f8fafc;border-radius:20px;padding:18px;text-align:left;margin:18px auto 25px;max-width:500px;border:1px solid #e2e8f0}.box div{padding:7px 0}
-.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}button{border:0;border-radius:999px;padding:14px 22px;font-size:16px;font-weight:700;cursor:pointer;background:#172033;color:white;transition:.18s}button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.12)}
-.tiny{margin-top:24px;font-size:12px;color:#94a3b8}.fade{animation:fade .4s ease}@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.final{font-size:18px}.signature{margin-top:22px;font-size:14px;color:#64748b}
+body{margin:0;min-height:100vh;font-family:Arial,sans-serif;background:linear-gradient(135deg,#fff0f6,#ffe4ef 45%,#fff7fb);display:flex;align-items:center;justify-content:center;color:#3b2631;padding:20px;overflow:hidden;position:relative}
+.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.heart{position:absolute;color:#f4a6c4;opacity:.28;font-size:22px;animation:float linear infinite}
+.heart:nth-child(1){left:7%;top:12%;font-size:28px;animation-duration:8s}.heart:nth-child(2){left:18%;top:78%;font-size:18px;animation-duration:11s}.heart:nth-child(3){left:31%;top:22%;font-size:16px;animation-duration:9s}.heart:nth-child(4){left:48%;top:88%;font-size:30px;animation-duration:12s}.heart:nth-child(5){left:67%;top:15%;font-size:20px;animation-duration:10s}.heart:nth-child(6){left:81%;top:72%;font-size:27px;animation-duration:9s}.heart:nth-child(7){left:92%;top:30%;font-size:15px;animation-duration:13s}.heart:nth-child(8){left:55%;top:8%;font-size:14px;animation-duration:10s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-18px) rotate(8deg)}}
+.card{z-index:1;width:min(650px,100%);background:rgba(255,255,255,.92);border:1px solid #ffd2e2;border-radius:30px;padding:34px 28px 26px;box-shadow:0 24px 70px rgba(183,76,119,.15);text-align:center;backdrop-filter:blur(8px)}
+.progress{height:6px;background:#f9d9e6;border-radius:99px;overflow:hidden;margin-bottom:26px}.progress span{display:block;height:100%;background:#e78caf;border-radius:99px;transition:width .35s ease}
+.emoji{font-size:46px;margin:2px 0 10px}.step{font-size:12px;color:#b06b87;margin-bottom:14px;letter-spacing:.08em;text-transform:uppercase}.title{font-size:30px;font-weight:800;line-height:1.15;margin:0 0 16px;color:#542d3d}.text{font-size:17px;line-height:1.7;color:#6d4b59;margin:0 auto 24px;max-width:530px}
+.btns{display:flex;justify-content:center}button{border:0;border-radius:999px;padding:14px 24px;font-size:16px;font-weight:700;cursor:pointer;background:#e78caf;color:white;transition:.18s;box-shadow:0 6px 18px rgba(231,140,175,.25)}button:hover{transform:translateY(-2px)}
+.tiny{margin-top:24px;font-size:12px;color:#c18ba0}.fade{animation:fade .4s ease}@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.final{font-size:18px}.signature{margin-top:22px;font-size:14px;color:#a46b82}
 @media(max-width:480px){.card{padding:28px 20px 22px}.title{font-size:27px}.text{font-size:16px}}
 </style>
 </head>
 <body>
+<div class="hearts"><span class="heart">♥</span><span class="heart">♡</span><span class="heart">♥</span><span class="heart">♡</span><span class="heart">♥</span><span class="heart">♡</span><span class="heart">♥</span><span class="heart">♡</span></div>
 <main class="card">
 <div class="progress"><span id="bar"></span></div>
 <div id="screen" class="fade"></div>
-<div class="tiny">feito com carinho, sem nenhuma obrigação de responder 💙</div>
+<div class="tiny">feito com carinho, só pra te lembrar de uma coisa 💗</div>
 </main>
 <script>
 const screens=[
-{emoji:"👀",title:"Amor, tenho uma coisa pra te contar...",text:"Depois de uma investigação extremamente séria, cheguei a uma conclusão meio óbvia.",button:"Quero saber 👀"},
-{emoji:"🫵🏻",title:"O problema é você, princesa.",text:"Porque eu gosto muito de ficar perto de você. Gosto das nossas conversas, das besteiras, das risadas e daqueles momentos em que a gente simplesmente fica de boa juntos.\n\nE sim... às vezes bate aquela saudadezinha. Mas prometo não fazer um drama sobre isso kkkkk.",button:"Tá, e sábado?"},
-{emoji:"🗓️",title:"Sábado. 💙",text:"Bebê, eu tô bem ansioso pra te ver. Quero chegar aí, ficar pertinho, conversar, rir, te abraçar, te beijar e ficar de bobeira com você.\n\nE não tô indo com uma expectativa de como o dia precisa ser. Se a gente fizer mil coisas, ótimo. Se ficar só conversando, ótimo também.\n\nSe rolar alguma coisa a mais, maravilhoso. Se não rolar, também. Eu só quero aproveitar um tempinho com você, amor.",button:"Mas eu sei de uma coisa..."},
-{emoji:"🤍",title:"Eu sei que você tá na correria.",text:"Faculdade, estágio, um milhão de coisas e provavelmente uma cabeça cheia. Então fica tranquila, neném.\n\nSe a gente não conseguir conversar tanto agora, tá tudo bem. Quando você tiver um tempinho, a gente conversa e coloca o papo em dia.\n\nEu não quero ser mais uma cobrança no meio da sua rotina. Só quero que você saiba que, quando precisar, pode contar comigo.",button:"Última coisa..."},
-{emoji:"🥹",title:"Eu só quero que você saiba disso.",text:"Eu gosto de você, princesa. Gosto de estar com você e gosto do jeito que a gente é quando tá junto.\n\nEntão sábado eu só quero te ver, te dar um abraço apertado, ficar pertinho e aproveitar você. Sem pressão, sem roteiro e sem precisar transformar tudo em alguma coisa.\n\nE quando você precisar de mim, seja pra conversar, reclamar, rir, jogar, assistir alguma coisa ou simplesmente ficar quietinha... eu tô aqui. 💙",final:true}
+{emoji:"💗",title:"Amor, isso aqui é só pra você.",text:"Eu sei que ultimamente tá tudo meio corrido. Faculdade, estágio, responsabilidades, coisas pra resolver... e às vezes parece que não sobra tempo nem pra respirar.",button:"Continua..."},
+{emoji:"🌷",title:"Então eu queria te lembrar de uma coisa.",text:"Você não precisa dar conta de tudo ao mesmo tempo, princesa. E muito menos precisa se preocupar em estar disponível o tempo todo pra mim.\n\nSe estiver cansada, descansa. Se estiver ocupada, cuida das suas coisas. Se precisar de um tempo, aproveita seu tempo. Tá tudo bem.",button:"Mas e eu?"},
+{emoji:"🤍",title:"Eu tô aqui, neném.",text:"Sem cobrança. Sem pressão. Sem você precisar me dar nada em troca.\n\nSe quiser conversar, eu te escuto. Se quiser reclamar, pode reclamar comigo. Se quiser rir e falar besteira, eu tô dentro. Se quiser jogar ou assistir alguma coisa, também.\n\nE se você só quiser ficar quietinha, eu fico do seu lado também.",button:"E sábado?"},
+{emoji:"🩷",title:"Sobre sábado...",text:"Eu tô ansioso pra te ver, bebê. Mas não porque espero que o sábado tenha que ser de um jeito específico.\n\nQuero só estar com você. Te abraçar, te beijar, ficar pertinho, conversar, rir, fazer nada... o que der vontade.\n\nSe a gente fizer mil coisas, ótimo. Se passar a tarde deitada conversando, ótimo também. O importante pra mim é poder passar um tempinho com você.",button:"Última coisinha..."},
+{emoji:"🥹",title:"E se em algum momento ficar pesado...",text:"Lembra que você não precisa carregar tudo sozinha, amor.\n\nEu não quero ser mais uma preocupação na sua cabeça. Quero ser justamente aquela pessoa que você sabe que pode chamar quando precisar.\n\nEntão vai no seu ritmo. Cuida de você. Faz o que você precisa fazer. E quando sobrar um tempinho, a gente conversa, ri e mata a saudade das nossas besteiras.\n\nEu vou estar aqui. 💗",final:true}
 ];
 let i=0;
 function render(){
 const s=screens[i],el=document.getElementById("screen");
 document.getElementById("bar").style.width=((i+1)/screens.length*100)+"%";
 el.className="fade";
-el.innerHTML='<div class="emoji">'+s.emoji+'</div><div class="step">'+(i+1)+' de '+screens.length+'</div><h1 class="title">'+s.title+'</h1><p class="text '+(s.final?'final':'')+'">'+s.text.replace(/\n/g,"<br>")+'</p>'+(s.final?'':'<div class="btns"><button onclick="next()">'+s.button+'</button></div>')+(s.final?'<div class="signature"><br><i>PS: sim, eu fiz um site inteiro pra você. Não se acostuma kkkkk 💙</i></div>':'');
+el.innerHTML='<div class="emoji">'+s.emoji+'</div><div class="step">'+(i+1)+' de '+screens.length+'</div><h1 class="title">'+s.title+'</h1><p class="text '+(s.final?'final':'')+'">'+s.text.replace(/\n/g,"<br>")+'</p>'+(s.final?'<div class="signature">Até sábado, princesa. 💗<br><br><i>PS: isso aqui não é uma cobrança. É só um lembrete de que eu tô do seu lado.</i></div>':'<div class="btns"><button onclick="next()">'+s.button+'</button></div>');
 }
 function next(){if(i<screens.length-1){i++;render()}}
 render();
